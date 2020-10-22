@@ -23,6 +23,9 @@ app.use((req, res, next) => {
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const menuRoutes = require('./routes/menu');
+const newsletterRoutes = require('./routes/newsletter');
+const courseRoutes = require('./routes/course');
+const postRoutes = require('./routes/post');
 
 // Middleares
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,5 +37,8 @@ app.use(bodyParser.json());
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', menuRoutes);
+app.use('/api', newsletterRoutes);
+app.use('/api', courseRoutes);
+app.use('/api', postRoutes);
 
 module.exports = app;
